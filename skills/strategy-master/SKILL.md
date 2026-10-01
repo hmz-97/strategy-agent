@@ -34,7 +34,7 @@ Run the four stages in order: **Define, Create, Capture, Deliver**. Each stage i
 **Challenge plan**
 - At the start of the run, before Define a, run:
   `python <this skill's folder>/scripts/plan_challenges.py <this skill's folder>/challenge-config.json`
-  It writes `dccd-run/challenge-plan.json`: up to 3 challenged letters per stage, always including e. Do not edit it or choose letters yourself.
+  It writes `dccd-run/challenge-plan.json`: up to 3 challenged letters per stage, always including d. Do not edit it or choose letters yourself.
 - For each letter, check the plan:
   - `true`: worker → challenger (1 call) → conciliator. This conciliator covers this letter AND any unchallenged letters since the last conciliation, marking those "Unchallenged".
   - `false`: worker only. Do NOT call the conciliator.
@@ -100,7 +100,7 @@ After the deck, build `dccd-run/argument-map.html` from the transcript and conci
 2. **Render** a single self-contained HTML page:
    - One Mermaid flowchart per stage, in order Define → Create → Capture → Deliver. Each letter is a chain: claim → objection → response → settled. Colour the final node green if SATISFIED, red if UNRESOLVED; letters with no objection go straight from claim to settled.
    - Dashed edges where a conciliation flagged a contradiction with an earlier letter.
-   - A summary table: per stage, objections raised, resolved, unresolved, challenger calls used (of 10).
+   - A summary table: per stage, objections raised, resolved, unresolved, challenger calls used (of 3).
    - A list of unresolved objections, since those are the weakest points of the analysis.
    - Load Mermaid from cdn.jsdelivr.net; everything else inline.
 3. Keep every node to one line; the full text lives in the transcripts.

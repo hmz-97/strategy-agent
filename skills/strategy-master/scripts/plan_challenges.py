@@ -1,9 +1,13 @@
 import json, random, sys, pathlib
 cfg = json.load(open(sys.argv[1]))
-rng = random.Random(cfg["seed"])
 w, always = cfg["weights"], cfg["always"]
 assert abs(sum(w.values()) - 1) < 1e-6, "weights must sum to 1"
-plan = {}
+assert not set(always) & set(w), "'always' letters must not also be in weights"
+assert cfg["draws"] <= len(w), "draws cannot exceed the number of weighted letters"
+# record the seed actually used, so any run can be reproduced
+seed = cfg["seed"] if cfg["seed"] is not None else random.randrange(2**32)
+rng = random.Random(seed)
+plan = {"seed": seed, "max_calls_per_stage": cfg["max_calls_per_stage"]}
 for stage in ["define", "create", "capture", "deliver"]:
     # weighted sampling without replacement
     picked = sorted(w, key=lambda l: rng.random() ** (1 / w[l]), reverse=True)[:cfg["draws"]]
