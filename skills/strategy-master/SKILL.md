@@ -1,4 +1,3 @@
-````markdown
 ---
 name: strategy-master
 description: Orchestrates a full DCCD strategy analysis (Define, Create, Capture, Deliver) of a firm using the a to g interrogation method from CMU Tepper 46-882, delegating each step to the worker, challenger and conciliator subagents, then builds a 9-slide deck from the conciliated findings only. Use whenever the user asks for a firm's strategy, theory of value, competitive advantage, WTP vs. low cost, VRIO, value stick, five forces, activity fit, a case analysis, or "what should this firm do", even if they don't name the framework.
@@ -368,4 +367,3 @@ From the Session 3 and 5 decks unless marked otherwise.
 - **Trader Joe's:** cost-side wedge within the gourmet segment (about one-tenth the SKUs, private label, fast turns, minimal advertising) with a WTP kicker. Every piece is visible to Kroger; the question is why no one builds a TJ's inside their walls. Look at the system and the crew culture, not any single piece.
 - **Coca-Cola and Pepsi (Session 7, deck not reviewed):** used to separate value created from value captured, and to show why industry boundaries matter (concentrate vs. bottling).
 - **Gucci (Session 9, deck not reviewed):** the model for a Deliver misalignment audit: activities that grew revenue while eroding the source of WTP.
-````
