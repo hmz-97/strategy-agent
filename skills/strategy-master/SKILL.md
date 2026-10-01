@@ -26,24 +26,31 @@ The course's core rule applies to the whole pipeline: output is not understandin
 - Create a working folder `dccd-run/` and save the frame to `dccd-run/00-frame.md`.
 
 ### 1.1 The loop
-Run the four stages in order: **Define, Create, Capture, Deliver**. Each stage inherits the settled answer of the one before, so a weak Define poisons everything downstream.
+Run the four stages in order: **Define, Create, Capture, Deliver**. Each stage inherits the settled answer of the one before, so a weak Define poisons everything downstream. Within each stage, run letters **a to g** in order.
 
-Within each stage, run letters **a to g** in order. For each letter:
+**Challenge budget**
+- At most **2 challenger calls per letter**.
+- At most **10 challenger calls per stage**. Every letter always gets its first challenger call. A second call is allowed only if (challenger calls already used in this stage + letters remaining after this one) < 10, so later letters never lose their first call.
 
-1. **Worker.** Call the worker subagent with:
-   - the frame (`00-frame.md`)
-   - the stage's section from Part 3, copied in full
-   - the letter's definition from Part 2, copied in full
-   - the conciliator summaries produced so far (all earlier stages, plus earlier letters of this stage). Pass only these summaries, never full earlier transcripts.
-   - the evidence rules from Part 4
-   - the instruction: "Do letter [x] for the [stage] stage. Answer concisely. Label every fact Given / Verified (with source) / Assumed."
-   - For letter **a** only, add: "First draft the stage's argument (premises with 'because', leading to a conclusion) using the stage's tools, then pin its terms." Letters b to g interrogate and refine that draft.
-2. **Challenger.** Call the challenger subagent with the question (stage + letter + firm) and the worker's output.
-3. **If `VERDICT: CHALLENGE`**: send the objections back to the worker, asking it to address each one by number, then call the challenger again with the full exchange. Allow at most **2 challenge rounds** per letter. If the challenger is still not satisfied after round 2, move on and carry its open objections forward as unresolved.
-4. **Conciliator.** Call the conciliator subagent with the full exchange for this letter (worker output, challenges, responses, verdicts). Ask it to return: the settled position for this letter, the key evidence with labels, what changed under challenge, and residual caveats or unresolved objections.
-5. **Save.** Write the full exchange to `dccd-run/[stage]-[letter]-transcript.md` and the conciliator output to `dccd-run/[stage]-[letter]-conciliation.md`.
+**What each subagent sees**
 
-That is 28 cycles (4 stages × 7 letters). Do not skip letters or merge them to save time.
+| Subagent | Gets | Never gets |
+|---|---|---|
+| Worker | The frame; its own final outputs from all earlier letters and stages (`dccd-run/worker/`); the current stage section from Part 3 and the current letter from Part 2 only; the evidence rules from Part 4; the case library (Part 5) on letter a only; when revising, the challenger's objection for this letter | Instructions for other stages or letters, challenger output from earlier letters, conciliator summaries, slide rules |
+| Challenger | A one-line label (firm, stage, letter) and the worker's latest output for this letter. On a second call, also its own previous objection, so it can judge whether that point was resolved | The frame, earlier letters or stages, conciliations, anything from this skill |
+| Conciliator | The full chain so far: the frame, every earlier transcript and conciliation (all letters and stages), and this letter's full exchange | Nothing withheld |
+
+**For each letter:**
+
+1. **Worker.** Call the worker with its context (above) and the instruction: "Do letter [x] for the [stage] stage. Label every fact Given / Verified (with source) / Assumed." For letter **a** only, add: "First draft the stage's argument (premises with 'because', leading to a conclusion) using the stage's tools, then pin its terms." Letters b to g interrogate and refine that draft.
+2. **Challenger.** Call the challenger with the label and the worker's output.
+3. **If `VERDICT: CHALLENGE`** and the budget allows a second call: send the objection to the worker with its previous output for this letter, ask it to address the objection directly, then call the challenger again with the label, the revised output, and its previous objection. If the budget does not allow a second call, or the second call still returns CHALLENGE, move on and mark the objection unresolved.
+4. **Conciliator.** Call the conciliator with the full chain (above).
+5. **Save.**
+   - Worker's final output for this letter → `dccd-run/worker/[stage]-[letter].md`
+   - Full exchange for this letter → `dccd-run/[stage]-[letter]-transcript.md`
+   - Conciliator output → `dccd-run/[stage]-[letter]-conciliation.md`
+   - Keep a running count of challenger calls per stage in `dccd-run/budget.md`.
 
 ### 1.2 Consistency check (you do this, after Deliver g)
 Using only the conciliation files, check:
@@ -76,6 +83,19 @@ Slide rules:
 - Short bullets and tables over paragraphs. Each slide should be readable in under a minute.
 - Keep evidence labels (Given / Verified / Assumed) on load-bearing numbers, and cite sources in small text at the bottom of the slide.
 - Build the deck as a .pptx with the pptx skill if it is available. Otherwise write `dccd-run/slides.md` with one `## Slide N: [title]` section per slide.
+
+### 1.3b Build the argument map
+After the deck, build `dccd-run/argument-map.html` from the transcript and conciliation files. This is a record of the debate, so unlike the deck it may use transcripts.
+
+1. **Extract** one record per letter into `dccd-run/map.json`:
+   `{stage, letter, claim (worker's core point, 1 line), objection (challenger's point, 1 line, or null), sources_checked, response (worker's revision, 1 line, or null), verdict (SATISFIED / UNRESOLVED), settled (conciliator's settled position, 1 line), challenger_calls}`
+2. **Render** a single self-contained HTML page:
+   - One Mermaid flowchart per stage, in order Define → Create → Capture → Deliver. Each letter is a chain: claim → objection → response → settled. Colour the final node green if SATISFIED, red if UNRESOLVED; letters with no objection go straight from claim to settled.
+   - Dashed edges where a conciliation flagged a contradiction with an earlier letter.
+   - A summary table: per stage, objections raised, resolved, unresolved, challenger calls used (of 10).
+   - A list of unresolved objections, since those are the weakest points of the analysis.
+   - Load Mermaid from cdn.jsdelivr.net; everything else inline.
+3. Keep every node to one line; the full text lives in the transcripts.
 
 ### 1.4 Finish
 Give the user the deck, a 3 to 5 sentence bottom line, and the single weakest premise. Mention that the full run record is in `dccd-run/`.
