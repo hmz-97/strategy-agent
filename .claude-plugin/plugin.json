@@ -1,5 +1,5 @@
 {
   "name": "strategy-master",
-  "version": "3.0.2",
-  "description": "DCCD strategy analysis with worker, challenger and conciliator agents, producing a 9-slide deck."
+  "version": "4.0.0",
+  "description": "Fast DCCD strategy analysis (~10 min): parallel researchers, one worker pass and one challenger review per stage, and a script-built 9-slide deck."
 }

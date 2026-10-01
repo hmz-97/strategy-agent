@@ -1,0 +1,596 @@
+{
+  "title": "Palantir: DCCD strategy analysis",
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "DCCD strategy analysis · October 2026",
+      "title": "Palantir has a real but temporary advantage, and it hinges on keeping its deployment method in-house",
+      "subtitle": "Theory of value: Palantir sustains value-creating growth by owning the ontology and operational-integration layer, proven in national security, and combining it with forward-deployed engineering and AIP, so that AI is embedded in each customer's live workflows.",
+      "meta": "Define → Create → Capture → Deliver · evidence labelled V = verified, A = assumed"
+    },
+    {
+      "layout": "content",
+      "stage": "1 · Define",
+      "title": "Palantir sells governed AI into the live operations of large institutions; its 'why' leans on a lock-in premise that is unproven",
+      "stats": [
+        {
+          "big": "$1.935B",
+          "label": "Q2'26 revenue, +93% y/y",
+          "src": "V · 8-K Ex. 99.1"
+        },
+        {
+          "big": "+149%",
+          "label": "US commercial revenue ($764M)",
+          "src": "V · 8-K Ex. 99.1"
+        },
+        {
+          "big": "1,049",
+          "label": "customers, +24% y/y",
+          "src": "V · 10-Q"
+        },
+        {
+          "big": "$124M",
+          "label": "average revenue, top-20 accounts",
+          "src": "V · 10-Q"
+        }
+      ],
+      "split": 0.46,
+      "left": [
+        {
+          "type": "card",
+          "heading": "Who",
+          "text": "Operations-heavy institutions: US/allied defense and intelligence, plus large operators in manufacturing, energy, health and supply chain. ~220 deals of $1M+ per quarter (V)."
+        },
+        {
+          "type": "card",
+          "heading": "What",
+          "text": "Governed AI in live workflows in weeks, via ontology + AIP (permissions, lineage, action write-back). 'Weeks vs years' is company-claimed (A)."
+        },
+        {
+          "type": "card",
+          "heading": "Why",
+          "text": "Trust, forward-deployed engineers and an embedded ontology are meant to raise switching costs and drive expansion. Exit-cost effect unproven (A)."
+        }
+      ],
+      "right": [
+        {
+          "type": "card",
+          "tone": "outline",
+          "heading": "The Define argument",
+          "lines": [
+            "P1  Operations-heavy institutions need AI that changes live decisions, because spend keeps deepening (US commercial +149%, V; NDR 157%, CFO-stated, unfiled).",
+            "P2  Palantir delivers it faster than self-build or bare model APIs, because the ontology supplies what they lack (A).",
+            "P3  Palantir keeps the value, because each workflow raises exit cost (P3a, A) and rivals lack parity for ~3 years (A).",
+            "C   Palantir creates and captures value for roughly 2–3 years; longer only if P3a is shown."
+          ]
+        },
+        {
+          "type": "card",
+          "tone": "accent",
+          "heading": "Segway test: passes, conditional on P3a",
+          "text": "WHO is still wide in commercial; contracts allow termination for convenience (V, 10-Q), which cuts against lock-in."
+        }
+      ],
+      "source": "Sources: Palantir Q2 2026 8-K Ex. 99.1 and 10-Q (SEC EDGAR); NDR from the CFO's prepared remarks on the earnings call (not in filings)."
+    },
+    {
+      "layout": "content",
+      "stage": "2 · Create (1/2)",
+      "title": "Palantir wins on willingness to pay, not on cost, but the size of its WTP gap over an SI-led build is unmeasured",
+      "split": 0.47,
+      "left": [
+        {
+          "type": "card",
+          "heading": "Position statement",
+          "text": "For operations-heavy institutions that need AI to change live decisions, Palantir offers governed AI deployed into their workflows, better than an SI-led build on Databricks or a hyperscaler stack, because ontology, forward deployment, AIP and accredited trust work as one system."
+        },
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Side: higher WTP",
+          "text": "Cost is not the claim. The 85% gross margin reflects software mix, and FDE cost sits partly in S&M (V, 10-Q). Evidence shows only WTP ≥ price; no commercial win/loss data exists."
+        },
+        {
+          "type": "card",
+          "heading": "Cost / quality frontier",
+          "text": "High-quality, high-cost end: defensible but thin. Neighbours are Anduril (government) and AI-lab ventures (commercial); Databricks, Fabric and AWS crowd the low-cost end."
+        }
+      ],
+      "right": [
+        {
+          "type": "chart",
+          "chart": "stacked",
+          "title": "Value stick per top account (index, WTP = top of bar)",
+          "labels": [
+            "Palantir",
+            "SI + Databricks"
+          ],
+          "series": [
+            {
+              "name": "WTS (supplier floor)",
+              "values": [
+                12,
+                10
+              ]
+            },
+            {
+              "name": "Supplier surplus",
+              "values": [
+                3,
+                4
+              ]
+            },
+            {
+              "name": "Firm margin",
+              "values": [
+                25,
+                6
+              ]
+            },
+            {
+              "name": "Customer delight",
+              "values": [
+                60,
+                50
+              ]
+            }
+          ],
+          "note": "ILLUSTRATIVE (A): WTP 100 vs 70, price 40 vs 20, cost 15 vs 14. No measured rival WTP.",
+          "noteTone": "alert"
+        }
+      ],
+      "source": "Sources: Palantir Q2 2026 10-Q (gross margin, cost classification); value sticks are assumed."
+    },
+    {
+      "layout": "content",
+      "stage": "2 · Create (2/2)",
+      "title": "The edge is a capability system on a clock of about two years, and inimitability is its weakest link",
+      "split": 0.6,
+      "left": [
+        {
+          "type": "table",
+          "header": [
+            "Source",
+            "V",
+            "R",
+            "I",
+            "O",
+            "Verdict"
+          ],
+          "colW": [
+            2.2,
+            0.55,
+            0.85,
+            1.15,
+            0.75,
+            1.8
+          ],
+          "rows": [
+            [
+              "Ontology / AIP software",
+              "Y",
+              "Y",
+              "Weak",
+              "Y",
+              "Temporary"
+            ],
+            [
+              "Accreditations / Army EA",
+              "Y",
+              "Partial",
+              "Buyable",
+              "Y",
+              "Parity to temporary"
+            ],
+            [
+              "FDE deployment routine",
+              "Y",
+              "Y",
+              "Contested",
+              "Y",
+              "Temporary"
+            ],
+            [
+              "Customer data",
+              "Y",
+              "N",
+              "N",
+              "Partial",
+              "Parity"
+            ],
+            [
+              "Interlocking system",
+              "Y",
+              "Y",
+              "Y (≈66%, A)",
+              "Y",
+              "Temporary, longest clock"
+            ]
+          ],
+          "highlight": [
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "type": "card",
+          "tone": "alert",
+          "heading": "Weakest letter: I on the ontology",
+          "text": "OSDK openness plus copying by AI labs and data platforms. Four interlocking parts copied at 90% fidelity each yield 0.9⁴ ≈ 66% (A)."
+        },
+        {
+          "type": "card",
+          "heading": "Barber test: tried, not yet failed",
+          "text": "OpenAI's Deployment Company (>$4B, ~150 FDEs; V) and Anthropic's services JV (~$1.5B; V, secondary) are both copying forward deployment."
+        }
+      ],
+      "right": [
+        {
+          "type": "card",
+          "heading": "Advantage type",
+          "text": "Capability-based (the system), with a thin positional layer (accreditations)."
+        },
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Durability",
+          "text": "Temporary: ~2 yrs in top commercial accounts, 1–2 yrs mid-size, 2–3 yrs government (A, judgement)."
+        },
+        {
+          "type": "card",
+          "heading": "Scalability",
+          "text": "Scales in depth (top accounts), not breadth; capped by FDE supply and AIP substitution."
+        }
+      ],
+      "source": "Sources: OpenAI Deployment Company announcement (search excerpt); Fortune citing WSJ on the Anthropic JV. Clocks are judgement."
+    },
+    {
+      "layout": "content",
+      "stage": "3 · Capture (1/2)",
+      "title": "Substitutes cap industry profit: in commercial, the option to build it yourself sets the price ceiling",
+      "split": 0.68,
+      "left": [
+        {
+          "type": "table",
+          "header": [
+            "Force",
+            "Gov",
+            "Comm",
+            "Reason"
+          ],
+          "colW": [
+            1.6,
+            0.7,
+            0.7,
+            5.1
+          ],
+          "ratingCols": [
+            1,
+            2
+          ],
+          "rows": [
+            [
+              "Rivalry",
+              "M",
+              "H",
+              "Few accredited players, and the Army buys two; in commercial, Databricks, Snowflake, Fabric and the AI labs"
+            ],
+            [
+              "Threat of entry",
+              "L–M",
+              "H",
+              "Accreditation takes years; commercial entry needs only capital and distribution"
+            ],
+            [
+              "Buyer power",
+              "H",
+              "M",
+              "Monopsony buyer, volume tiers, termination rights; commercial buyers hold the build option"
+            ],
+            [
+              "Supplier power",
+              "M",
+              "M",
+              "Clouds and model providers are also rivals; scarce FDE talent is paid in SBC"
+            ],
+            [
+              "Substitutes",
+              "M",
+              "H",
+              "SI-led builds and near-zero-price bundles from platforms"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "All ratings are judgement (A)."
+        }
+      ],
+      "right": [
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Most threatening force",
+          "big": "Substitutes in commercial",
+          "text": "The build option caps price, and buyer power works through it."
+        },
+        {
+          "type": "card",
+          "heading": "Industry boundary",
+          "text": "Two industries share one product: government (US/allied) and commercial operational-AI platforms. Revenue split ≈ 51 / 49 (V, 10-Q)."
+        }
+      ],
+      "source": "Sources: Palantir Q2 2026 10-Q (segment revenue); Army enterprise agreements (Washington Technology, DefenseScoop)."
+    },
+    {
+      "layout": "content",
+      "stage": "3 · Capture (2/2)",
+      "title": "Palantir out-earns peers with different business models, but its margin lead is growth leverage, not proven pricing power",
+      "split": 0.52,
+      "left": [
+        {
+          "type": "chart",
+          "chart": "clustered",
+          "percent": true,
+          "title": "Operating margin tracks growth (%)",
+          "labels": [
+            "2023",
+            "2024",
+            "2025",
+            "Q2 2026"
+          ],
+          "series": [
+            {
+              "name": "Revenue growth",
+              "values": [
+                17,
+                29,
+                56,
+                93
+              ]
+            },
+            {
+              "name": "GAAP operating margin",
+              "values": [
+                5,
+                11,
+                32,
+                47
+              ]
+            }
+          ],
+          "colors": [
+            "8A94A0",
+            "D9822B"
+          ],
+          "note": "Gross margin held at 79–85% across 17–93% growth: software-normal, not a premium. FY23/24 10-Ks, FY25 secondary, Q2'26 8-K (V)."
+        }
+      ],
+      "right": [
+        {
+          "type": "table",
+          "header": [
+            "Firm",
+            "Gross",
+            "GAAP op."
+          ],
+          "colW": [
+            2.45,
+            1.4,
+            1.6
+          ],
+          "rows": [
+            [
+              "Palantir (Q2'26)",
+              "85%",
+              "47%"
+            ],
+            [
+              "Datadog",
+              "80%",
+              "−1%"
+            ],
+            [
+              "ServiceNow*",
+              "78%",
+              "12.5%"
+            ],
+            [
+              "Snowflake",
+              "72%",
+              "≈ −31%"
+            ],
+            [
+              "Accenture",
+              "n/a",
+              "15.4%"
+            ]
+          ]
+        },
+        {
+          "type": "note",
+          "tone": "alert",
+          "text": "*Unresolved: 10-K reading ~13.7% at ~19% growth. Either figure beats Palantir's 5–11% at similar growth."
+        },
+        {
+          "type": "card",
+          "heading": "Pushes back on: substitutes",
+          "text": "Write-back workflows raise the cost of moving to a build (A). Price per workflow at renewal is not observed."
+        },
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Consistent with Create? Only weakly",
+          "text": "Shows WTP ≥ price, not a WTP premium. Value may leak to buyers (EA volume tiers) and employees (SBC +66% y/y)."
+        }
+      ],
+      "source": "Sources: Palantir 10-Ks FY23/FY24, Q2 2026 8-K and 10-Q; peer margins via search summaries."
+    },
+    {
+      "layout": "content",
+      "stage": "4 · Deliver (1/2)",
+      "title": "The system half of the advantage is well organized: product, in-house FDEs and bootcamps reinforce each other",
+      "full": [
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Create source, restated",
+          "text": "The ontology/AIP system, plus a tacit deployment method and accredited trust, which together put governed AI into live workflows in weeks."
+        },
+        {
+          "type": "table",
+          "header": [
+            "Activity",
+            "Verdict",
+            "Mechanism",
+            "Fit type"
+          ],
+          "colW": [
+            3.0,
+            2.2,
+            4.9,
+            2.0
+          ],
+          "verdictCol": 1,
+          "rows": [
+            [
+              "Product (ontology, AIP)",
+              "Fits",
+              "Each workflow adds objects and write-back",
+              "Reinforcement"
+            ],
+            [
+              "In-house FDEs",
+              "Fits (capacity-bound)",
+              "Carry the method; demand outruns capacity",
+              "Reinforcement"
+            ],
+            [
+              "Bootcamps / sales",
+              "Fits",
+              "Prove value in days",
+              "Optimization"
+            ],
+            [
+              "Hiring (Fellowship)",
+              "Fits (small)",
+              "Mission-selected pipeline",
+              "Consistency"
+            ],
+            [
+              "Partners (Accenture, Fujitsu)",
+              "Neutral, pending",
+              "Loosen capacity; risk diffusing the method",
+              "Optimization if scoped"
+            ],
+            [
+              "Pricing / EAs",
+              "Neutral for Deliver",
+              "A capture leak, not a source issue",
+              "—"
+            ],
+            [
+              "Pay (SBC +66% y/y)",
+              "Misfit risk",
+              "Retention tied to the share price",
+              "—"
+            ]
+          ]
+        }
+      ],
+      "source": "Sources: Palantir Q2 2026 10-Q (cash, SBC); Accenture newsroom (Dec 2025); Fujitsu FDE partner announcement (Sep 2026)."
+    },
+    {
+      "layout": "content",
+      "stage": "4 · Deliver (2/2)",
+      "title": "The method half is exposed: partner scale-up and pay tied to the share price could leak what rivals cannot yet copy",
+      "left": [
+        {
+          "type": "card",
+          "tone": "alert",
+          "heading": "Misfit 1 · Unlimited partner scope",
+          "text": "Partners that also serve Databricks diffuse the method (hits VRIO 'I'). Accenture's Palantir group has 2,000+ staff (V).",
+          "bullets": [
+            "Fix: partners deliver scoped work only; tie volume to not dual-sourcing."
+          ]
+        },
+        {
+          "type": "card",
+          "tone": "alert",
+          "heading": "Misfit 2 · SBC-only retention",
+          "text": "Method carriers can leave for AI-lab deployment arms if the stock falls. SBC $265M in Q2, +66% y/y (V, 10-Q).",
+          "bullets": [
+            "Fix: targeted cash retention from the $9.4B cash pile (cost A)."
+          ]
+        }
+      ],
+      "right": [
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Fix that matters most",
+          "big": "Scope control",
+          "text": "Design stays in-house; partners only deliver. Palantir controls the lever, and it is the stage's breaking premise. Cost: slower growth than demand allows."
+        },
+        {
+          "type": "card",
+          "heading": "Link to VRIO 'O' · Verdict: partly organized",
+          "text": "Yes on the system, unproven on the method."
+        },
+        {
+          "type": "card",
+          "tone": "alert",
+          "heading": "Unresolved",
+          "text": "Who designs the ontology in partner deployments? Partner literature says SIs do (secondary)."
+        }
+      ],
+      "source": "Sources: Accenture newsroom; Palantir Q2 2026 10-Q; partner articles (secondary)."
+    },
+    {
+      "layout": "close",
+      "stage": "Conclusion",
+      "title": "A real but temporary advantage: durability depends on one assumed premise, that the deployment method stays in-house",
+      "left": [
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "The full argument",
+          "lines": [
+            "P1  Operations-heavy institutions need AI that changes live decisions, because spend is deepening (US commercial +149%, V).",
+            "P2  Palantir creates more value than an SI build, because its ontology/AIP system plus tacit method delivers governed action faster (WTP ≥ price shown; premium not).",
+            "P3  It keeps software-normal gross margin plus a growth-dependent operating premium, because it holds off substitutes in top accounts only.",
+            "P4  It is partly organized: the system fits; the method is exposed through partners and SBC.",
+            "C   Capability-based, temporary advantage (~2 yrs commercial, 2–3 yrs government) that depends on keeping the method in-house."
+          ]
+        }
+      ],
+      "right": [
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Cross-stage findings",
+          "bullets": [
+            "Define's WHY (lock-in) is stronger than Create supports (temporary scarcity).",
+            "Capture shows WTP ≥ price, not a WTP premium.",
+            "Deliver straddles: scales via partners while claiming the method is tacit."
+          ]
+        },
+        {
+          "type": "card",
+          "tone": "alertfill",
+          "heading": "Weakest premise",
+          "text": "Scoping and ontology design stay with Palantir-controlled people. Settle it with partner SOWs and NDR for partner-led vs FDE-led cohorts."
+        },
+        {
+          "type": "card",
+          "tone": "dark",
+          "heading": "Implication (no decision was posed)",
+          "text": "Prioritize scope control and price-independent retention. Tripwires: gross margin <78% for 2 qtrs; NDR <130%; growth <30% with op. margin <15%."
+        }
+      ],
+      "source": "Built only from the stage settled files and consistency.md. Full run record: dccd-run/."
+    }
+  ]
+}

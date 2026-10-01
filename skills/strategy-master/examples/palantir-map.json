@@ -1,0 +1,13 @@
+{
+  "firm": "Palantir",
+  "stages": [
+    {"stage": "Define", "claim": "Governed AI in live ops of large institutions; lock-in drives expansion", "objection": "NDR 157% only from an aggregator, not a primary source", "sources_checked": "8-K, 10-Q, StatementDog", "response": "Re-attributed to CFO prepared remarks; labelled unfiled", "verdict": "ADDRESSED", "settled": "Lock-in premise (P3a) unproven; advantage temporary 2-3 yrs", "challenger_calls": 1},
+    {"stage": "Create", "claim": "WTP wedge vs SI build on Databricks from ontology+FDE+AIP system", "objection": "Anthropic ~$1.5B labelled Verified but source has no figure", "sources_checked": "Goldman release, Fortune/WSJ", "response": "Relabelled secondary; dropped $5.5B aggregate", "verdict": "SATISFIED", "settled": "Capability-based, temporary; VRIO weakest letter = I on ontology", "challenger_calls": 2},
+    {"stage": "Capture", "claim": "Palantir out-earns peers; 47% GAAP op. margin", "objection": "Margin lead is growth leverage, not structural capture", "sources_checked": "10-Ks FY23/24, ServiceNow 10-K", "response": "Narrowed to software-normal gross margin; op. premium growth-dependent", "verdict": "SATISFIED", "settled": "WTP >= price shown, premium not; substitutes most threatening force", "challenger_calls": 2},
+    {"stage": "Deliver", "claim": "Partly organized: system fits, method exposed", "objection": "Partner literature says SIs design ontologies", "sources_checked": "partner articles (secondary)", "response": null, "verdict": "UNRESOLVED", "settled": "Scope control is the fix that matters most", "challenger_calls": 1}
+  ],
+  "contradictions": [
+    {"from": "Create", "to": "Define", "note": "Source shifts from lock-in to temporary scarcity"},
+    {"from": "Capture", "to": "Create", "note": "Gross margin at parity undercuts the WTP sticks"}
+  ]
+}
