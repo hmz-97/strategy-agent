@@ -28,6 +28,8 @@ The course's core rule applies to the whole pipeline: output is not understandin
 ### 1.1 The loop
 Run the four stages in order: **Define, Create, Capture, Deliver**. Each stage inherits the settled answer of the one before, so a weak Define poisons everything downstream. Within each stage, run letters **a to g** in order.
 
+**Worker routing:** use `worker` for Define and Deliver, and `worker-chad` for Create and Capture, for every letter and revision in that stage. "Worker" elsewhere in this skill means whichever one the stage uses.
+
 **Challenge budget**
 - At most **2 challenger calls per letter**.
 - At most **10 challenger calls per stage**. Every letter always gets its first challenger call. A second call is allowed only if (challenger calls already used in this stage + letters remaining after this one) < 10, so later letters never lose their first call.
