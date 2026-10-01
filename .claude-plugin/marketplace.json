@@ -1,0 +1,5 @@
+{
+  "name": "strategy-agent",
+  "owner": { "name": "4fast4furious" },
+  "plugins": [{ "name": "strategy-master", "source": "./" }]
+}

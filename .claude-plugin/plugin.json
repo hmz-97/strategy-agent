@@ -1,0 +1,5 @@
+{
+  "name": "strategy-master",
+  "version": "1.0.0",
+  "description": "DCCD strategy analysis with worker, challenger and conciliator agents, producing a 9-slide deck."
+}
