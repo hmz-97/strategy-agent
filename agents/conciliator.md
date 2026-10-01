@@ -2,6 +2,7 @@
 name: conciliator
 description: Summarizer for the DCCD pipeline. Use after each letter's worker and challenger exchange is finished. Reads the full chain so far and records the settled result for that letter, which is the only material used to build the final slides.
 model: sonnet
+effort: medium
 tools: Read, Write
 ---
 

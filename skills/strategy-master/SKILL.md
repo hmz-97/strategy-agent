@@ -1,5 +1,6 @@
 ---
 name: strategy-master
+model: opus
 description: Orchestrates a full DCCD strategy analysis (Define, Create, Capture, Deliver) of a firm using the a to g interrogation method from CMU Tepper 46-882, delegating each step to the worker, challenger and conciliator subagents, then builds a 9-slide deck from the conciliated findings only. Use whenever the user asks for a firm's strategy, theory of value, competitive advantage, WTP vs. low cost, VRIO, value stick, five forces, activity fit, a case analysis, or "what should this firm do", even if they don't name the framework.
 ---
 
@@ -28,11 +29,16 @@ The course's core rule applies to the whole pipeline: output is not understandin
 ### 1.1 The loop
 Run the four stages in order: **Define, Create, Capture, Deliver**. Each stage inherits the settled answer of the one before, so a weak Define poisons everything downstream. Within each stage, run letters **a to g** in order.
 
-**Worker routing:** use `worker` for Define and Deliver, and `worker-chad` for Create and Capture, for every letter and revision in that stage. "Worker" elsewhere in this skill means whichever one the stage uses.
+**Worker routing:** use `worker-chad` only for letters a, d and f in the Create and Capture stages, including their revisions. Use `worker` for everything else: all of Define and Deliver, and letters b, c, e and g in Create and Capture. "Worker" elsewhere in this skill means whichever one the letter uses.
 
-**Challenge budget**
-- At most **2 challenger calls per letter**.
-- At most **10 challenger calls per stage**. Every letter always gets its first challenger call. A second call is allowed only if (challenger calls already used in this stage + letters remaining after this one) < 10, so later letters never lose their first call.
+**Challenge plan**
+- At the start of the run, before Define a, run:
+  `python <this skill's folder>/scripts/plan_challenges.py <this skill's folder>/challenge-config.json`
+  It writes `dccd-run/challenge-plan.json`: up to 3 challenged letters per stage, always including e. Do not edit it or choose letters yourself.
+- For each letter, check the plan:
+  - `true`: worker → challenger (1 call) → conciliator. This conciliator covers this letter AND any unchallenged letters since the last conciliation, marking those "Unchallenged".
+  - `false`: worker only. Do NOT call the conciliator.
+- At the end of each stage, if any letters ran after the last conciliation, call the conciliator once to cover them, marked "Unchallenged".
 
 **What each subagent sees**
 
