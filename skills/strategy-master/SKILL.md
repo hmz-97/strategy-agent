@@ -58,7 +58,7 @@ Run the four stages in order: **Define, Create, Capture, Deliver**. Each stage i
    - Worker's final output for this letter → `dccd-run/worker/[stage]-[letter].md`
    - Full exchange for this letter → `dccd-run/[stage]-[letter]-transcript.md`
    - Conciliator output → `dccd-run/[stage]-[letter]-conciliation.md`
-   - Keep a running count of challenger calls per stage in `dccd-run/budget.md`.
+   - Log every challenger call in `dccd-run/budget.md`, per stage. Read `max_calls_per_stage` from `dccd-run/challenge-plan.json`; once a stage reaches it, make no more challenger calls in that stage. Treat any remaining planned letters as `false` (worker only) and mark them "Unchallenged (budget)".
 
 ### 1.2 Consistency check (you do this, after Deliver g)
 Using only the conciliation files, check:

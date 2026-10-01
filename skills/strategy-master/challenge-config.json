@@ -1,6 +1,7 @@
 {
-  "always": ["e"],
+  "always": ["d"],
   "draws": 2,
+  "max_calls_per_stage": 3,
   "seed": null,
-  "weights": { "a": 0.30, "b": 0.05, "c": 0.10, "d": 0.30, "f": 0.10, "g": 0.15 }
+  "weights": { "a": 0.30, "b": 0.05, "c": 0.10, "e": 0.30, "f": 0.10, "g": 0.15 }
 }
